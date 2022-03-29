@@ -59,42 +59,13 @@ function filterStudents($pdo, $get_skolskyRok, $get_semester, $get_kategoria) {
 	$stmt->execute(['skolsky_rok' => $get_skolskyRok, 'semester' => $get_semester, 'kategoria' => $get_kategoria]);
 };
 
-function getStudentList($pdo, $skola_id, $get_skolskyRok, $get_semester, $get_kategoria) {
-	$sql = "SELECT id, kod, meno, priezvisko, anglictina, priorita_1, priorita_2, priorita_3, anglictina, priemer, poznamky, if(vybrana_skola IS NULL, priorita_1, vybrana_skola) as id_vyber
-					FROM studenti
-					WHERE kategoria = :kategoria AND skolsky_rok = :skolsky_rok AND semester = :semester
-					HAVING id_vyber = :id_skola
-					ORDER BY anglictina DESC";
-	$stmt = $pdo->prepare($sql);
-	$stmt->execute(['id_skola' => $skola_id, 'skolsky_rok' => $get_skolskyRok, 'semester' => $get_semester, 'kategoria' => $get_kategoria]);
-
-	$res = $stmt->fetchAll();
-	
-	foreach($res as $student) {
-		?>
-
-		<p>
-			<strong><?php echo $student['kod'] . ', ' . $student['meno'] . ' ' . $student['priezvisko'] ?></strong><br>
-			Priority: <?php echo $student['priorita_1'] . ', ' . $student['priorita_2'] . ', ' . $student['priorita_3'] ?><br>
-			Angličtina: <span style="color: orange"><strong><?php echo $student['anglictina'] ?></strong></span><br>
-			Priemer: <?php echo $student['priemer'] ?><br>
-			Poznámky: <?php echo $student['poznamky'] ?>
-		</p>
-
-		<?php
-	}
-}
-
-// SELECT id, priezvisko, if(vybrana_skola IS NULL, priorita_1, vybrana_skola) as id_vyber
-// FROM studenti
-// HAVING id_vyber = 4;
-
 function getSchools($pdo, $get_skolskyRok, $get_semester, $get_kategoria) {
-	$sql = "SELECT sk.id, COUNT(st.id_vyber) as stCount, sk.nazov  
+	$sql = "SELECT sk.id, COUNT(st.id_vyber) as stCount, sk.nazov 
 					FROM skoly sk
 					LEFT JOIN tmp_studenti st ON sk.id = st.id_vyber
+					WHERE sk.stav = 1
 					GROUP BY sk.id
-					ORDER BY stCount DESC";
+					ORDER BY stCount DESC, sk.nazov ASC";
 	$stmt = $pdo->prepare($sql);
 	$stmt->execute();
 
@@ -111,6 +82,61 @@ function getSchools($pdo, $get_skolskyRok, $get_semester, $get_kategoria) {
 		getStudentList($pdo, $skola_id, $get_skolskyRok, $get_semester, $get_kategoria);
 	}
 }
+
+function getStudentList($pdo, $skola_id, $get_skolskyRok, $get_semester, $get_kategoria) {
+	$sql = "SELECT id, kod, meno, priezvisko, anglictina, priorita_1, priorita_2, priorita_3, stav, anglictina, priemer, poznamky, if(vybrana_skola IS NULL, priorita_1, vybrana_skola) as id_vyber
+					FROM studenti
+					WHERE stav = 1 AND kategoria = :kategoria AND skolsky_rok = :skolsky_rok AND semester = :semester
+					HAVING id_vyber = :id_skola
+					ORDER BY anglictina DESC";
+	$stmt = $pdo->prepare($sql);
+	$stmt->execute(['id_skola' => $skola_id, 'skolsky_rok' => $get_skolskyRok, 'semester' => $get_semester, 'kategoria' => $get_kategoria]);
+
+	$res = $stmt->fetchAll();
+	
+	foreach($res as $student) {
+		?>
+
+		<p>
+			<strong><?php echo $student['kod'] . ', ' . $student['meno'] . ' ' . $student['priezvisko'] ?></strong><br>
+			Priority: <?php echo $student['priorita_1'];
+								if($student['priorita_3']) {
+									echo ', ' . $student['priorita_2'];
+								}
+								if($student['priorita_3']) {
+									echo ', ' . $student['priorita_3'];
+								}
+								?><br>
+			Angličtina: <span style="color: orange"><strong><?php
+				if ($student['anglictina']) {
+					echo $student['anglictina'];
+				} else {
+					echo 'Údaj nedostupný';
+				};
+			?></strong></span><br>
+			Priemer: <?php
+				if ($student['priemer']) {
+					echo $student['priemer'];
+				} else {
+					echo 'Údaj nedostupný';
+				};
+			?><br>
+			Poznámky: <?php
+				if ($student['poznamky']) {
+					echo $student['poznamky'];
+				} else {
+					echo 'Údaj nedostupný';
+				};
+			?>
+		</p>
+
+		<?php
+	}
+}
+
+// SELECT id, priezvisko, if(vybrana_skola IS NULL, priorita_1, vybrana_skola) as id_vyber
+// FROM studenti
+// HAVING id_vyber = 4;
 
 // ---> Poradie funkcií
 
