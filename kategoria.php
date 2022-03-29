@@ -44,23 +44,32 @@ try {
 // FROM studenti
 // WHERE studenti.skolsky_rok = 2223 AND studenti.semester = 'ZS' AND studenti.kategoria = 'MD'
 
+// function filterStudents($pdo, $get_skolskyRok, $get_semester, $get_kategoria) {
+// 	$sql = "INSERT INTO tmp_studenti (id_student, id_vyber)
+// 					SELECT studenti.id as id_student, if(studenti.vybrana_skola IS NULL, studenti.priorita_1, studenti.vybrana_skola) as id_vyber
+// 					FROM studenti
+// 					WHERE studenti.skolsky_rok = :skolsky_rok AND studenti.semester = :semester AND studenti.kategoria = :kategoria";
+// 	$stmt = $pdo->prepare($sql);
+// 	$stmt->execute(['skolsky_rok' => $get_skolskyRok, 'semester' => $get_semester, 'kategoria' => $get_kategoria]);
+// };
+
 function clearTable($pdo) {
 	$sql = "DELETE FROM tmp_studenti";
 	$stmt = $pdo->prepare($sql);
 	$stmt->execute();
 };
 
-function filterStudents($pdo, $get_skolskyRok, $get_semester, $get_kategoria) {
+function filterStudents($pdo, $get_skolskyRok, $get_semester) {
 	$sql = "INSERT INTO tmp_studenti (id_student, id_vyber)
 					SELECT studenti.id as id_student, if(studenti.vybrana_skola IS NULL, studenti.priorita_1, studenti.vybrana_skola) as id_vyber
 					FROM studenti
-					WHERE studenti.skolsky_rok = :skolsky_rok AND studenti.semester = :semester AND studenti.kategoria = :kategoria";
+					WHERE studenti.skolsky_rok = :skolsky_rok AND studenti.semester = :semester";
 	$stmt = $pdo->prepare($sql);
-	$stmt->execute(['skolsky_rok' => $get_skolskyRok, 'semester' => $get_semester, 'kategoria' => $get_kategoria]);
+	$stmt->execute(['skolsky_rok' => $get_skolskyRok, 'semester' => $get_semester]);
 };
 
 function getSchools($pdo, $get_skolskyRok, $get_semester, $get_kategoria) {
-	$sql = "SELECT sk.id, COUNT(st.id_vyber) as stCount, sk.nazov 
+	$sql = "SELECT sk.id, COUNT(st.id_vyber) as stCount, sk.nazov, sk.kapacita 
 					FROM skoly sk
 					LEFT JOIN tmp_studenti st ON sk.id = st.id_vyber
 					WHERE sk.stav = 1
@@ -74,7 +83,11 @@ function getSchools($pdo, $get_skolskyRok, $get_semester, $get_kategoria) {
 	foreach($res as $skola) {
 		?> 
 
-		<h4 style='color: blue'><strong><?php echo $skola['nazov'] ?></strong></h4>
+		<hr>
+		<h4 style='color: blue'>
+			<strong>Názov školy: <?php echo $skola['nazov'] . ' ' ?></strong><br>
+			<span style="color: black"><?php echo $skola['stCount'] . '/' . $skola['kapacita'] ?></span>
+		</h4>
 
 		<?php
 
@@ -97,16 +110,17 @@ function getStudentList($pdo, $skola_id, $get_skolskyRok, $get_semester, $get_ka
 	foreach($res as $student) {
 		?>
 
-		<p>
-			<strong><?php echo $student['kod'] . ', ' . $student['meno'] . ' ' . $student['priezvisko'] ?></strong><br>
+		<p style="background-color: lightgrey; padding: 5px">
+			<strong><?php echo $student['meno'] . ' ' . $student['priezvisko'] ?></strong><br>
+			Kód: <?php echo $student['kod'] ?><br>
 			Priority: <?php echo $student['priorita_1'];
-								if($student['priorita_3']) {
-									echo ', ' . $student['priorita_2'];
-								}
-								if($student['priorita_3']) {
-									echo ', ' . $student['priorita_3'];
-								}
-								?><br>
+				if($student['priorita_3']) {
+					echo ', ' . $student['priorita_2'];
+				}
+				if($student['priorita_3']) {
+					echo ', ' . $student['priorita_3'];
+				}
+				?><br>
 			Angličtina: <span style="color: orange"><strong><?php
 				if ($student['anglictina']) {
 					echo $student['anglictina'];
@@ -141,7 +155,7 @@ function getStudentList($pdo, $skola_id, $get_skolskyRok, $get_semester, $get_ka
 // ---> Poradie funkcií
 
 clearTable($pdo);
-filterStudents($pdo, $get_skolskyRok, $get_semester, $get_kategoria);
+filterStudents($pdo, $get_skolskyRok, $get_semester);
 getSchools($pdo, $get_skolskyRok, $get_semester, $get_kategoria);
 
 // 	$sql = "SELECT * FROM skoly WHERE mk = 1";
