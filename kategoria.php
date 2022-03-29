@@ -60,7 +60,7 @@ function filterStudents($pdo, $get_skolskyRok, $get_semester, $get_kategoria) {
 };
 
 function getStudentList($pdo, $skola_id, $get_skolskyRok, $get_semester, $get_kategoria) {
-	$sql = "SELECT id, priezvisko, anglictina, if(vybrana_skola IS NULL, priorita_1, vybrana_skola) as id_vyber
+	$sql = "SELECT id, kod, meno, priezvisko, anglictina, priorita_1, priorita_2, priorita_3, anglictina, priemer, poznamky, if(vybrana_skola IS NULL, priorita_1, vybrana_skola) as id_vyber
 					FROM studenti
 					WHERE kategoria = :kategoria AND skolsky_rok = :skolsky_rok AND semester = :semester
 					HAVING id_vyber = :id_skola
@@ -73,7 +73,13 @@ function getStudentList($pdo, $skola_id, $get_skolskyRok, $get_semester, $get_ka
 	foreach($res as $student) {
 		?>
 
-		<li><?php echo $student['anglictina'] ?></li>
+		<p>
+			<strong><?php echo $student['kod'] . ', ' . $student['meno'] . ' ' . $student['priezvisko'] ?></strong><br>
+			Priority: <?php echo $student['priorita_1'] . ', ' . $student['priorita_2'] . ', ' . $student['priorita_3'] ?><br>
+			Angličtina: <span style="color: orange"><strong><?php echo $student['anglictina'] ?></strong></span><br>
+			Priemer: <?php echo $student['priemer'] ?><br>
+			Poznámky: <?php echo $student['poznamky'] ?>
+		</p>
 
 		<?php
 	}
@@ -97,7 +103,7 @@ function getSchools($pdo, $get_skolskyRok, $get_semester, $get_kategoria) {
 	foreach($res as $skola) {
 		?> 
 
-		<p><strong><?php echo $skola['nazov'] ?></strong></p>
+		<h4 style='color: blue'><strong><?php echo $skola['nazov'] ?></strong></h4>
 
 		<?php
 
