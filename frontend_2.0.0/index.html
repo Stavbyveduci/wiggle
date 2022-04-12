@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link  rel="stylesheet"  href="../scss/style.scss">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <title>Hello, world!</title>
+  </head>
+  <body class="bg-light">
+  
+
+
+  <!-- Navigácia -->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="wiggle_logo.svg" height="80" class="d-inline-block align-center" alt="">
+        LS 2021/2022
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse ps-5" id="navbarText">
+        <ul class="nav nav-pills me-auto mb-2 mb-lg-0">
+          <li class="nav-item ">
+            <a class="nav-link px-1" href="#"><button type="button" class="btn btn-primary btn-sm ">Vše</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-1" href="#"><button type="button" class="btn bg-light btn-sm"></i>Marketing</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-1" href="#"><button type="button" class="btn bg-light btn-sm"></i>Audiovízia</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-1" href="#"><button type="button" class="btn bg-light btn-sm"></i>Dizajn</button></a>
+          </li>
+        </ul>
+        <span class="navbar-text m-3">
+          Mgr.Eva Prokopová
+        </span>
+        <span class="navbar-text m-3">
+          Odhlásiť sa
+        </span>
+      </div>
+    </div>
+  </nav>
+  
+  
+<!--///container full width / layout ///-->
+
+
+  <div class=" px-5 py-0 container-fluid bg-light">
+    <div class="row  justify-content-center">
+
+
+
+      <!-- buttons section -->  
+
+      <div class="col-6 align-bottom  py-3">
+        <div class="d-flex flex-row start">
+          <div class="p-1"><button type="button" class="btn bg-opacity-25 bg-danger btn-sm text-danger"><i class="bi bi-exclamation-triangle-fill" style=" color: red;"></i> Kolize: 20 studentu </button></div>
+          <div class="p-1"><button type="button" class="btn btn-primary btn-sm">Aktualizovat <i class="bi bi-arrow-repeat"></i></button></div>
+        </div>
+      </div>
+      <div class="col-6 align-bottom py-3">
+        <div class="d-flex flex-row justify-content-end">
+          <div class="p-1"><button type="button" class="btn btn-close-dark btn-sm text-secondary"><i class="bi bi-folder-check"></i> Vaše zmeny sa práve uložili</button></div>
+        </div>
+      </div>
+
+      <!-- buttons section --> 
+
+
+
+
+      <!--/// left column/ layout ///-->
+      <div class="col-7">
+      <!--/// left column/ layout ///-->
+
+
+        <!-- tabulka header-->
+          <div class="container m-0 p-0">
+              <div class="row">
+
+                <div class="col-4">
+                  <div class="d-flex flex-row">
+                    <div class="p-1" style="font-size: 12px;">Obsadenost</div>
+                  </div>
+                </div>
+
+                <div class="col-8 m-0 p-0"> 
+                  <table class="table  table-borderless table-sm table-responsive m-0 p-0 table-fixed" style="font-size: 12px;">
+                    <tbody>
+                      <tr>
+                        <td>Student</td>
+                        <td>B/M</td>
+                        <td >AJ</td>
+                        <td>0</td>
+                        <td >0</td>
+                        <td class="w-10">0</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+            </div>
+
+
+        <!--/// left column/ content ///-->
+        <div class="bg-white border rounded-3 border-$gray-600 overflow-scroll" style="height: 70vh;">
+        <!--/// left column/ content ///-->
+
+
+        <!-- škola -->
+        <div class="">
+          <div class="row ps-2 ">
+            <hr class="solid m-0 p-0">
+
+            <!-- názov školy -->
+              <div class="col bg-white">
+                <div class="d-flex flex-row">
+                  <div class="p-1"><i class="bi bi-exclamation-triangle-fill" style=" color: red;"></i></div>
+                  <div class="p-1 text-danger"><strong><p>7/2</p></strong></div>
+                  <div class="p-1 fw-bolder">ESAD College of Art and Design</div>
+                </div>
+              </div>
+              <!-- názov školy -->
+              
+
+              <!-- študenti -->
+              <div class="col-8 m-0 p-0"> 
+                <table class="table table-hover table-borderless table-sm bg-white table-responsive m-0 p-0 ">
+                  <tbody>
+                    
+                    <tr>
+                      <td>KYSELICA, Michal</td>
+                      <td>B1</td>
+                      <td>9.45</td>
+                      <td>1.23</td>
+                      <td><i class="bi bi-info-circle-fill"></i></i></td>
+                      <td><i class="bi bi-bookmark-star"></i></td>
+                    </tr>
+                    <tr>
+                      <td>Priezvisko,Meno</td>
+                      <td>B1</td>
+                      <td>9.45</td>
+                      <td>1.23</td>
+                      <td><i class="bi bi-info-circle-fill"></i></i></td>
+                      <td><i class="bi bi-bookmark-star"></i></td>
+                    </tr>
+                    <tr>
+                      <td>Priezvisko,Meno</td>
+                      <td>B1</td>
+                      <td>9.45</td>
+                      <td>1.23</td>
+                      <td><i class="bi bi-info-circle-fill"></i></i></td>
+                      <td><i class="bi bi-bookmark-star"></i></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            <!-- študenti -->
+          </div>
+        </div>
+        <!-- škola -->
+
+
+
+        <!-- škola -->
+        <div class="">
+          <div class="row  ps-2 ">
+            <hr class="solid m-0 p-0">
+
+            <!-- názov školy -->
+              <div class="col bg-white">
+                <div class="d-flex flex-row">
+                  <div class="p-1"><i class="bi bi-exclamation-triangle-fill" style=" color: red;"></i></div>
+                  <div class="p-1 text-danger"><strong><p>7/2</p></strong></div>
+                  <div class="p-1 fw-bolder">ESAD College of Art and Design</div>
+                </div>
+              </div>
+              <!-- názov školy -->
+              
+
+              <!-- študenti -->
+              <div class="col-8 m-0 p-0"> 
+                <table class="table table-hover table-borderless table-sm bg-white table-responsive m-0 p-0 ">
+
+                  <tbody>
+                    <tr>
+                      <td>KYSELICA, Michal</td>
+                      <td>B1</td>
+                      <td>9.45</td>
+                      <td>1.23</td>
+                      <td><i class="bi bi-info-circle-fill"></i></i></td>
+                      <td><i class="bi bi-bookmark-star"></i></td>
+                    </tr>
+                    <tr>
+                      <td>Priezvisko,Meno</td>
+                      <td>B1</td>
+                      <td>9.45</td>
+                      <td>1.23</td>
+                      <td><i class="bi bi-info-circle-fill"></i></i></td>
+                      <td><i class="bi bi-bookmark-star"></i></td>
+                    </tr>
+                    <tr>
+                      <td>Priezvisko,Meno</td>
+                      <td>B1</td>
+                      <td>9.45</td>
+                      <td>1.23</td>
+                      <td><i class="bi bi-info-circle-fill"></i></i></td>
+                      <td><i class="bi bi-bookmark-star"></i></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            <!-- študenti -->
+          </div>
+        </div>
+        <!-- škola -->
+
+         <!-- škola -->
+         <div class="">
+          <div class="row  ps-2 ">
+            <hr class="solid m-0 p-0">
+
+            <!-- názov školy -->
+              <div class="col bg-white">
+                <div class="d-flex flex-row">
+                  <div class="p-1"><i class="bi bi-check-square-fill" style=" color: lightgreen;"></i></div>
+                  <div class="p-1 text-success"><strong><p>7/2</p></strong></div>
+                  <div class="p-1 fw-bolder">KEA Copenhagen School of Design and Technology</div>
+                </div>
+              </div>
+              <!-- názov školy -->
+              
+
+              <!-- študenti -->
+              <div class="col-8 m-0 p-0"> 
+                <table class="table table-hover table-borderless table-sm bg-white table-responsive m-0 p-0 ">
+
+                  <tbody>
+                    <tr>
+                      <td>KYSELICA, Michal</td>
+                      <td>B1</td>
+                      <td>9.45</td>
+                      <td>1.23</td>
+                      <td><i class="bi bi-info-circle-fill"></i></i></td>
+                      <td><i class="bi bi-bookmark-star"></i></td>
+                    </tr>
+                    <tr>
+                      <td>Priezvisko,Meno</td>
+                      <td>B1</td>
+                      <td>9.45</td>
+                      <td>1.23</td>
+                      <td><i class="bi bi-info-circle-fill"></i></i></td>
+                      <td><i class="bi bi-bookmark-star"></i></td>
+                    </tr>
+                    <tr>
+                      <td>Priezvisko,Meno</td>
+                      <td>B1</td>
+                      <td>9.45</td>
+                      <td>1.23</td>
+                      <td><i class="bi bi-info-circle-fill"></i></i></td>
+                      <td><i class="bi bi-bookmark-star"></i></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            <!-- študenti -->
+          </div>
+        </div>
+        <!-- škola -->
+
+        <!-- škola -->
+        <div class="">
+          <div class="row  ps-2 ">
+            <hr class="solid m-0 p-0">
+
+            <!-- názov školy -->
+              <div class="col bg-white">
+                <div class="d-flex flex-row">
+                  <div class="p-1"><i class="bi bi-check-square-fill" style=" color: lightgreen;"></i></div>
+                  <div class="p-1 text-success"><strong><p>7/2</p></strong></div>
+                  <div class="p-1 fw-bolder">ISBA - Institut Superieur des Beaux-Arts de Besancon/Franche-Comte</div>
+                </div>
+              </div>
+              <!-- názov školy -->
+              
+
+              <!-- študenti -->
+              <div class="col-8 m-0 p-0"> 
+                <table class="table table-hover table-borderless table-sm bg-white table-responsive m-0 p-0 ">
+
+                  <tbody>
+                    <tr>
+                      <td>KYSELICA, Michal</td>
+                      <td>B1</td>
+                      <td>9.45</td>
+                      <td>1.23</td>
+                      <td><i class="bi bi-info-circle-fill"></i></i></td>
+                      <td><i class="bi bi-bookmark-star"></i></td>
+                    </tr>
+                    <tr>
+                      <td>Priezvisko,Meno</td>
+                      <td>B1</td>
+                      <td>9.45</td>
+                      <td>1.23</td>
+                      <td><i class="bi bi-info-circle-fill"></i></i></td>
+                      <td><i class="bi bi-bookmark-star"></i></td>
+                    </tr>
+                    <tr>
+                      <td>Priezvisko,Meno</td>
+                      <td>B1</td>
+                      <td>9.45</td>
+                      <td>1.23</td>
+                      <td><i class="bi bi-info-circle-fill"></i></i></td>
+                      <td><i class="bi bi-bookmark-star"></i></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            <!-- študenti -->
+          </div>
+        </div>
+        <!-- škola -->
+
+         <!-- škola -->
+         <div class="">
+          <div class="row  ps-2 ">
+            <hr class="solid m-0 p-0">
+
+            <!-- názov školy -->
+              <div class="col bg-white">
+                <div class="d-flex flex-row">
+                  <div class="p-1"><i class="bi bi-check-square" style=" color: lightskyblue"></i></div>
+                  <div class="p-1 text-primary"><strong><p>7/2</p></strong></div>
+                  <div class="p-1 fw-bolder">3iS: International Institute for Image and Sound</div>
+                </div>
+              </div>
+              <!-- názov školy -->
+              
+
+              <!-- študenti -->
+              <div class="col-8 m-0 p-0"> 
+                <table class="table table-hover table-borderless table-sm bg-white table-responsive m-0 p-0 ">
+
+                  <tbody>
+                    <tr>
+                      <td>KYSELICA, Michal</td>
+                      <td>B1</td>
+                      <td>9.45</td>
+                      <td>1.23</td>
+                      <td><i class="bi bi-info-circle-fill"></i></i></td>
+                      <td><i class="bi bi-bookmark-star"></i></td>
+                    </tr>
+                    <tr>
+                      <td>Priezvisko,Meno</td>
+                      <td>B1</td>
+                      <td>9.45</td>
+                      <td>1.23</td>
+                      <td><i class="bi bi-info-circle-fill"></i></i></td>
+                      <td><i class="bi bi-bookmark-star"></i></td>
+                    </tr>
+                    <tr>
+                      <td>Priezvisko,Meno</td>
+                      <td>B1</td>
+                      <td>9.45</td>
+                      <td>1.23</td>
+                      <td><i class="bi bi-info-circle-fill"></i></i></td>
+                      <td><i class="bi bi-bookmark-star"></i></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            <!-- študenti -->
+          </div>
+        </div>
+        <!-- škola -->
+
+        <!-- škola -->
+        <div class="">
+          <div class="row  ps-2 ">
+            <hr class="solid m-0 p-0">
+
+            <!-- názov školy -->
+              <div class="col bg-white">
+                <div class="d-flex flex-row">
+                  <div class="p-1"><i class="bi bi-check-square" style="color: lightskyblue;"></i></div>
+                  <div class="p-1 text-primary"><strong><p>7/2</p></strong></div>
+                  <div class="p-1 fw-bolder">School of Higher Education in Art and Design (ESAD Orleans)</div>
+                </div>
+              </div>
+              <!-- názov školy -->
+              
+
+              <!-- študenti -->
+              <div class="col-8 m-0 p-0"> 
+                <table class="table table-hover table-borderless table-sm bg-white table-responsive m-0 p-0 ">
+
+                  <tbody>
+                    <tr>
+                      <td>KYSELICA, Michal</td>
+                      <td>B1</td>
+                      <td>9.45</td>
+                      <td>1.23</td>
+                      <td><i class="bi bi-info-circle-fill"></i></i></td>
+                      <td><i class="bi bi-bookmark-star"></i></td>
+                    </tr>
+                    <tr>
+                      <td>Priezvisko,Meno</td>
+                      <td>B1</td>
+                      <td>9.45</td>
+                      <td>1.23</td>
+                      <td><i class="bi bi-info-circle-fill"></i></i></td>
+                      <td><i class="bi bi-bookmark-star"></i></td>
+                    </tr>
+                    <tr>
+                      <td>Priezvisko,Meno</td>
+                      <td>B1</td>
+                      <td>9.45</td>
+                      <td>1.23</td>
+                      <td><i class="bi bi-info-circle-fill"></i></i></td>
+                      <td><i class="bi bi-bookmark-star"></i></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            <!-- študenti -->
+          </div>
+        </div>
+        <!-- škola -->
+
+
+        <!-- škola -->
+        <div class="">
+          <div class="row  ps-2 ">
+            <hr class="solid m-0 p-0">
+
+            <!-- názov školy -->
+              <div class="col bg-white">
+                <div class="d-flex flex-row">
+                  <div class="p-1"><i class="bi bi-exclamation-triangle-fill" style=" color: red;"></i></div>
+                  <div class="p-1 text-danger"><strong><p>7/2</p></strong></div>
+                  <div class="p-1 fw-bolder">ESAD College of Art and Design</div>
+                </div>
+              </div>
+              <!-- názov školy -->
+              
+
+              <!-- študenti -->
+              <div class="col-8 m-0 p-0"> 
+                <table class="table table-hover table-borderless table-sm bg-white table-responsive m-0 p-0 ">
+
+                  <tbody>
+                    <tr>
+                      <td>KYSELICA, Michal</td>
+                      <td>B1</td>
+                      <td>9.45</td>
+                      <td>1.23</td>
+                      <td><i class="bi bi-info-circle-fill"></i></i></td>
+                      <td><i class="bi bi-bookmark-star"></i></td>
+                    </tr>
+                    <tr>
+                      <td>Priezvisko,Meno</td>
+                      <td>B1</td>
+                      <td>9.45</td>
+                      <td>1.23</td>
+                      <td><i class="bi bi-info-circle-fill"></i></i></td>
+                      <td><i class="bi bi-bookmark-star"></i></td>
+                    </tr>
+                    <tr>
+                      <td>Priezvisko,Meno</td>
+                      <td>B1</td>
+                      <td>9.45</td>
+                      <td>1.23</td>
+                      <td><i class="bi bi-info-circle-fill"></i></i></td>
+                      <td><i class="bi bi-bookmark-star"></i></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            <!-- študenti -->
+          </div>
+        </div>
+        <!-- škola -->
+
+
+
+        <!-- škola -->
+        <div class="">
+          <div class="row  ps-2 ">
+            <hr class="solid m-0 p-0">
+
+            <!-- názov školy -->
+              <div class="col bg-white">
+                <div class="d-flex flex-row">
+                  <div class="p-1"><i class="bi bi-exclamation-triangle-fill" style=" color: red;"></i></div>
+                  <div class="p-1 text-danger"><strong><p>7/2</p></strong></div>
+                  <div class="p-1 fw-bolder">ESAD College of Art and Design</div>
+                </div>
+              </div>
+              <!-- názov školy -->
+              
+
+              <!-- študenti -->
+              <div class="col-8 m-0 p-0"> 
+                <table class="table table-hover table-borderless table-sm bg-white table-responsive m-0 p-0 ">
+
+                  <tbody>
+                    <tr>
+                      <td>KYSELICA, Michal</td>
+                      <td>B1</td>
+                      <td>9.45</td>
+                      <td>1.23</td>
+                      <td><i class="bi bi-info-circle-fill"></i></i></td>
+                      <td><i class="bi bi-bookmark-star"></i></td>
+                    </tr>
+                    <tr>
+                      <td>Priezvisko,Meno</td>
+                      <td>B1</td>
+                      <td>9.45</td>
+                      <td>1.23</td>
+                      <td><i class="bi bi-info-circle-fill"></i></i></td>
+                      <td><i class="bi bi-bookmark-star"></i></td>
+                    </tr>
+                    <tr>
+                      <td>Priezvisko,Meno</td>
+                      <td>B1</td>
+                      <td>9.45</td>
+                      <td>1.23</td>
+                      <td><i class="bi bi-info-circle-fill"></i></i></td>
+                      <td><i class="bi bi-bookmark-star"></i></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            <!-- študenti -->
+          </div>
+        </div>
+        <!-- škola -->
+        
+
+
+      <!--/// left column/ content ///-->
+        </div>
+      </div>
+      <!--/// left column/ layout ///-->
+
+
+      <!--/// right column/ layout ///-->
+      <div class="col-5">
+        <!--/// right column/ layout ///-->
+  
+  
+          <!-- tabulka header-->
+            <div class="container m-0 p-0">
+                <div class="row">
+  
+                  <div class="col-4">
+                    <div class="d-flex flex-row">
+                      <div class="p-1" style="font-size: 12px;">Další informace</div>
+                    </div>
+                  </div>
+
+  
+                </div>
+              </div>
+  
+  
+          <!--/// right column/ content ///-->
+          <div class="bg-white border rounded-3 border-$gray-600 " >
+          <!--/// right column/ content ///-->
+  
+              <!-- Header -->
+              <div class="">
+                <div class="row flex-wrap m-0 py-2 align-items-center ">
+  
+                  <div class="col-6">
+                    <div class="d-flex flex-row justify-content-start">
+                      <div class="p-1"><p class="m-0 p-0 small">Obor: Industriální design</p></div>
+                    </div>
+                  </div>
+
+                  <div class="col-6 "> 
+                    <div class="d-flex flex-row justify-content-end">
+                      <div class="p-1"><button type="button" class="btn btn-light btn-sm">Odebrat  <i class="bi bi-trash"></i></button></div>
+                      <div class="p-1"><button type="button" class="btn btn-primary btn-sm">Ozve se  <i class="bi bi-bookmark-star"></i></button></div>
+                      <div class="p-1"><button type="button" class="btn btn-white btn-sm"> <i class="bi bi-x-lg" style="color: black;"></i></button></div>
+                    </div>
+                  </div>
+
+  
+                </div>
+              </div>
+              <!-- Header -->
+
+
+              <!-- info o ziakovi sekcia -->
+              <div class="">
+                <hr class="solid p-0">
+                <div class="row m-0 py-2 my-4 align-items-center">
+  
+                  <div class="col-6">
+                      <p class="fs-3 text-uppercase p-0 m-0 fw-bolder">Chluppativec</p><p class="fs-3">Čestmír</p>
+                  </div>
+
+                  <div class="col-6 text-end"> 
+                      <div class=" container bg-white border rounded-3 border-$gray-600">
+                        <div class="hstack gap-3">
+                          <div class=" py-2">Ročník<p class="text-center fs-4 text-uppercase">M2</p></div>
+
+                          <div class="vr"></div>
+                          <div class="ms-auto py-2">Anglický jazyk<p class="text-center fs-4 text-uppercase">9,73</p></div>
+                          <div class="vr"></div>
+                          <div class="py-2">Průměr Ø<p class="text-center fs-4 text-uppercase">1,21</p></div>
+                        </div>
+
+                      </div>
+                  </div>
+
+  
+                </div>
+              </div>
+              <!-- info o ziakovi sekcia -->
+
+              <!-- Vybrana skola -->
+              <div class="">
+                <hr class="solid m-0 p-0">
+                <div class="row m-0 py-2 align-items-center">
+  
+                  <div class="col-6">
+                      <p class="small">Vybraná škola</p>
+                      <p class="fs-5 ">KEA Copenhagen School of Design and Technology</p>
+
+
+                  </div>
+
+                  <div class="col-6 no-gutters text-end align-text-bottom"> 
+                      <button type="button" class="btn btn-light btn-sm">Poslat sem <i class="bi bi-arrow-right"></i></button>
+                  </div>
+
+  
+                </div>
+              </div>
+              <!-- Vybrana skola -->
+
+
+              <!-- Poznamky -->
+              <div class="">
+                <hr class="solid m-0 p-0">
+                <div class="row m-0 py-2 align-items-center">
+  
+                  <div class="col-6">
+                      <p class="small"><i class="bi bi-info-circle-fill" style="color: blue;"></i>  Poznámka ke studentovi</i></p>
+                      <p class="ps-3">Je skvělý, chce hodně na KEA, chce jet spolu s + BcA. Jan Kuks, jsou oba z industriálního designu, dělají společně na projektu
+                      </p>
+
+
+                  </div>
+
+                  <div class="col-6 text-end "> 
+                      <button type="button" class="btn btn-light "><i class="bi bi-pen"></i></button>
+                  </div>
+
+  
+                </div>
+              </div>
+              <!-- Poznamky -->
+              
+  
+  
+  
+  
+            <!-- table/ Historia prihlasok -->
+            <div class="">
+              <hr class="solid m-0 p-0">
+              <div class="row p-2">
+
+                
+                <div class="col-12"> 
+                  <table class="table table-hover table-borderless table-sm bg-white table-responsive m-0 p-0 text-secondary">
+                    <thead>
+                      <tr>
+                        <th colspan="3">Historie přihlášek</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2019</td>
+                        <td>ESAD</td>
+                        <td>Erasmus</td>
+                        <td class="text-end">Neschváleno  <i class="bi bi-x"></i></td>
+                      </tr>
+                      <tr>
+                        <td>2020</td>
+                        <td>IBA</td>
+                        <td>Stáž</td>
+                        <td class="text-end">Schváleno  <i class="bi bi-check-lg"></i></td>
+                      </tr>
+                    </tbody>
+
+                  </table>
+                </div>
+
+              </div>
+            </div>
+            <!-- table/ Historia prihlasok -->
+
+
+             <!-- table/ Prihlaska studenta -->
+             <div class="">
+              <hr class="solid m-0 p-0">
+              <div class="row p-2">
+
+                
+                <div class="col-12 "> 
+                  <table class="table table-hover table-borderless table-sm bg-white table-responsive m-0 p-0 ">
+                    <thead>
+                      <tr>
+                        <th colspan="3">Přihlášky studenta</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>1</th>
+                        <td>KEA COPENHAGEN</td>
+                        <td class="text-danger">4/2</td>
+                        <td><i class="bi bi-info-circle-fill"></i></i></td>
+                        <td>Erasmus</td>
+                        <td class="text-end"><button type="button" class="btn btn-primary btn-sm">Vybráno</button></td>
+                      </tr>
+                      <tr>
+                        <th>2</th>
+                        <td>ISBA</td>
+                        <td class=" text-primary">1/2</td>
+                        <td><i class="bi bi-info-circle-fill"></i></i></td>
+                        <td>Erasmus</td>
+                        <td class="text-end"><button type="button" class="btn btn-light btn-sm">Poslat sem <i class="bi bi-arrow-right"></i></button></td>
+                      </tr>
+                      <tr>
+                        <th>3</th>
+                        <td>IBA</td>
+                        <td class="text-danger">4/2</td>
+                        <td><i class="bi bi-info-circle-fill"></i></i></td>
+                        <td>Erasmus</td>
+                        <td class="text-end"><button type="button" class="btn btn-light btn-sm">Poslat sem <i class="bi bi-arrow-right"></i></button></td>
+                      </tr>
+                    </tbody>
+
+                  </table>
+                </div>
+
+              </div>
+            </div>
+            <!-- table/ Prihlaska studenta -->
+
+
+            <!-- button/ dalsie moznosti -->
+            <div class="">
+              <hr class="solid m-0 p-0">
+              <div class="row p-2">
+
+                <div class="col-12 align-bottom py-3">
+                  <div class="d-flex flex-row start">
+                    <div class="p-1"><button type="button" class="btn btn-light btn-sm">Další možnosti Erasmu  <i class="bi bi-arrow-down"></i></button></div>
+                  </div>
+                </div>
+
+                </div>
+              </div>
+            </div>
+            <!-- button/ dalsie moznosti -->
+
+            
+
+      
+          
+          
+  
+         
+  
+  
+        <!--/// right column/ content ///-->
+          </div>
+        </div>
+        <!--/// right column/ layout ///-->      
+
+
+
+    </div>
+  </div>  
+  <!--/// web layout full width ///-->
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+ 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>
